@@ -2,6 +2,7 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const pageTitle = "关于我";
 
@@ -15,7 +16,7 @@ const identity = {
 const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 
 const happy = true;
-const finished = false;
+const finished = true;
 const goal = 3;
 
 const skillColor = "navy";
@@ -41,9 +42,7 @@ const textCase = "uppercase";
 		</style>
 	</head>
 	<body>
-		<Header />
-
-		<h1>{pageTitle}</h1>
+<BaseLayout pageTitle={pageTitle}>
 		<h2>……和我的新 Astro 网站！</h2>
 
 		<p>
@@ -78,10 +77,6 @@ const textCase = "uppercase";
 
 		{goal === 3 ? <p>我的目标是在三天内完成。</p> : <p>我的目标不是3天。</p>}
 
-		<Footer />
-
-		<script>
-			import "../scripts/menu.js";
-		</script>
+		</BaseLayout>
 	</body>
 </html>
